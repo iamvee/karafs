@@ -20,6 +20,7 @@ FOODS = [
     'kalam-e', 'kadoo_halavee-ye', 'delester-e', 'nooshabe-ye',
     'panir-e', 'tah_chin-e', 'ton_maahi-ye', 'faloode-ye', 'shir_berenj-e'
 ]
+""" List of foods """
 
 ADJS = [
     'araasteh', 'ashofteh', 'asoodeh', 'aloodeh', 'afrookhteh', 'afsordeh',
@@ -40,6 +41,7 @@ ADJS = [
     'boland_parvaz', 'delsard', 'kaftar_baaz', 'chabok', 'khafan',
     'daneshmand', 'data_scientist'
 ]
+""" List of adjectives """
 
 def gen() -> str:
     """ Generates a name and returns that as a string """
