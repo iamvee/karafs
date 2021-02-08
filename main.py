@@ -2,7 +2,7 @@
 
 """ Generates random name """
 
-import secrets
+from secrets import choice as secrets_choice
 
 foods = [
     'anaar-e', 'azgil-e', 'albaloo-ye', 'aloo-ye', 'ananas-e',
@@ -46,7 +46,7 @@ def run():
     global foods, adjs
     adjs = adjs * 10
     foods = foods * 10
-    name, adjective = secrets.choice(foods), secrets.choice(adjs) 
+    name, adjective = secrets_choice(foods), secrets_choice(adjs) 
 
     print(f"{name}-{adjective}")
 
