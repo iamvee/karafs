@@ -41,13 +41,17 @@ ADJS = [
     'daneshmand', 'data_scientist'
 ]
 
-def run():
-    """ The main function """
+def gen() -> str:
+    """ Generates a name and returns that as a string """
     adjs = ADJS * 10
     foods = ADJS * 10
     name, adjective = secrets_choice(foods), secrets_choice(adjs)
 
-    print(f"{name}-{adjective}")
+    return f"{name}-{adjective}"
+
+def run():
+    """ The main function """
+    print(gen())
 
 if __name__ == '__main__':
     run()
