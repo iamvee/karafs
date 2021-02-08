@@ -46,7 +46,7 @@ ADJS = [
 def gen() -> str:
     """ Generates a name and returns that as a string """
     adjs = ADJS * 10
-    foods = ADJS * 10
+    foods = FOODS * 10
     name, adjective = secrets_choice(foods), secrets_choice(adjs)
 
     return f"{name}-{adjective}"
