@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import random
+import secrets
 
 
 fruits = [
@@ -35,6 +35,9 @@ adjs = [
     'kheng', 'dana', 'khoshhal', 'kheng', 'ghozmit'
 ]
 
+adjs = adjs * 10
+fruits = fruits * 10
+name_fruit, adjective = secrets.choice(fruits), secrets.choice(adjs) 
 
-print(f"{random.choice(fruits)}-{random.choice(adjs)}")
+print(f"{name_fruit}-{adjective}")
 
