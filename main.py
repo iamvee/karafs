@@ -4,7 +4,7 @@
 
 from secrets import choice as secrets_choice
 
-foods = [
+FOODS = [
     'anaar-e', 'azgil-e', 'albaloo-ye', 'aloo-ye', 'ananas-e',
     'anjir-e', 'angoor-e', 'avokaado-ye', 'badoom-e', 'baalang-e',
     'baloot-e', 'beh-e', 'porteghal-e', 'peste-ye', 'toranj-e',
@@ -21,7 +21,7 @@ foods = [
     'panir-e', 'tah_chin-e', 'ton_maahi-ye', 'faloode-ye', 'shir_berenj-e'
 ]
 
-adjs = [
+ADJS = [
     'araasteh', 'ashofteh', 'asoodeh', 'aloodeh', 'afrookhteh', 'afsordeh',
     'baaz_maandeh', 'bargozideh', 'paloodeh', 'pokhteh', 'parvardeh',
     'parishan', 'parideh', 'pasandideh', 'pichideh', 'pishrafteh', 'bad_badan',
@@ -43,9 +43,8 @@ adjs = [
 
 def run():
     """ The main function """
-    global foods, adjs
-    adjs = adjs * 10
-    foods = foods * 10
+    adjs = ADJS * 10
+    foods = ADJS * 10
     name, adjective = secrets_choice(foods), secrets_choice(adjs)
 
     print(f"{name}-{adjective}")
