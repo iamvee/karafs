@@ -1,9 +1,8 @@
 # namegen
 تولید اسم های رندوم فینگیلیش
 
-
 ```shell
-➜ for i in $( seq 20 ); do { ./main.py; sleep .3 } done
+➜ for i in $( seq 20 ); do { ./namegen.py; sleep .3 } done
 grip_froot-e-salkhodeh
 zalzalak-e-taftideh
 khormaloo-ye-dana
@@ -25,3 +24,15 @@ shalil-e-bargozideh
 kharboze-ye-khak_barsar
 golabi-ye-dars_khaandeh
 ```
+
+همچنین میتونید اسم رندوم رو توی کدتون هم استفاده کنید:
+
+```python
+import namegen
+
+print(namegen.gen())
+```
+
+تابع
+`gen`
+یک اسم رندوم تولید میکنه و به صورت رشته برمیگردونه.
