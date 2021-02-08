@@ -38,7 +38,7 @@ ADJS = [
     'naz_parvardeh', 'vabasteh', 'varafteh', 'varasteh', 'varparideh',
     'varshekasteh', 'haraasaan', 'bi_namoos', 'khak_barsar', 'oghde_ee',
     'kheng', 'dana', 'khoshhal', 'kheng', 'ghozmit', 'afsoreh_sima',
-    'boland_parvaz', 'delsard', 'kaftar_baaz', 'chabok', 'khafan',
+    'boland_parvaz', 'delsard', 'kaftar_baaz', 'gorbe_baaz', 'chabok', 'khafan',
     'daneshmand', 'data_scientist'
 ]
 """ List of adjectives """
