@@ -18,7 +18,7 @@ foods = [
     'karafs-e', 'shivid-e', 'torob-e', 'piyaz-e', 'sir-e', 'havij-e',
     'nokhod-e', 'lobooya_sefid-e', 'loobiya_chiti-ye', 'ghoore-ye',
     'kalam-e', 'kadoo_halavee-ye', 'delester-e', 'nooshabe-ye',
-    'panir-e', 'tah_chin-e', 'ton_maahi-ye', 'faloode-ye', 'shir_berenj-e'    
+    'panir-e', 'tah_chin-e', 'ton_maahi-ye', 'faloode-ye', 'shir_berenj-e'
 ]
 
 adjs = [
@@ -46,10 +46,9 @@ def run():
     global foods, adjs
     adjs = adjs * 10
     foods = foods * 10
-    name, adjective = secrets_choice(foods), secrets_choice(adjs) 
+    name, adjective = secrets_choice(foods), secrets_choice(adjs)
 
     print(f"{name}-{adjective}")
 
 if __name__ == '__main__':
     run()
-
