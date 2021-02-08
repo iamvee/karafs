@@ -1,6 +1,8 @@
-#!/usr/bin/env python
-import secrets
+#!/usr/bin/env python3
 
+""" Generates random name """
+
+import secrets
 
 foods = [
     'anaar-e', 'azgil-e', 'albaloo-ye', 'aloo-ye', 'ananas-e',
@@ -18,8 +20,6 @@ foods = [
     'kalam-e', 'kadoo_halavee-ye', 'delester-e', 'nooshabe-ye',
     'panir-e', 'tah_chin-e', 'ton_maahi-ye', 'faloode-ye', 'shir_berenj-e'    
 ]
-
-
 
 adjs = [
     'araasteh', 'ashofteh', 'asoodeh', 'aloodeh', 'afrookhteh', 'afsordeh',
@@ -41,9 +41,15 @@ adjs = [
     'daneshmand', 'data_scientist'
 ]
 
-adjs = adjs * 10
-foods = foods * 10
-name, adjective = secrets.choice(foods), secrets.choice(adjs) 
+def run():
+    """ The main function """
+    global foods, adjs
+    adjs = adjs * 10
+    foods = foods * 10
+    name, adjective = secrets.choice(foods), secrets.choice(adjs) 
 
-print(f"{name}-{adjective}")
+    print(f"{name}-{adjective}")
+
+if __name__ == '__main__':
+    run()
 
