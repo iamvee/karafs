@@ -1,8 +1,10 @@
-#!/usr/bin/env python
-import secrets
+#!/usr/bin/env python3
 
+""" Generates random name """
 
-foods = [
+from secrets import choice as secrets_choice
+
+FOODS = [
     'anaar-e', 'azgil-e', 'albaloo-ye', 'aloo-ye', 'ananas-e',
     'anjir-e', 'angoor-e', 'avokaado-ye', 'badoom-e', 'baalang-e',
     'baloot-e', 'beh-e', 'porteghal-e', 'peste-ye', 'toranj-e',
@@ -16,12 +18,11 @@ foods = [
     'karafs-e', 'shivid-e', 'torob-e', 'piyaz-e', 'sir-e', 'havij-e',
     'nokhod-e', 'lobooya_sefid-e', 'loobiya_chiti-ye', 'ghoore-ye',
     'kalam-e', 'kadoo_halavee-ye', 'delester-e', 'nooshabe-ye',
-    'panir-e', 'tah_chin-e', 'ton_maahi-ye', 'faloode-ye', 'shir_berenj-e'    
+    'panir-e', 'tah_chin-e', 'ton_maahi-ye', 'faloode-ye', 'shir_berenj-e'
 ]
+""" List of foods """
 
-
-
-adjs = [
+ADJS = [
     'araasteh', 'ashofteh', 'asoodeh', 'aloodeh', 'afrookhteh', 'afsordeh',
     'baaz_maandeh', 'bargozideh', 'paloodeh', 'pokhteh', 'parvardeh',
     'parishan', 'parideh', 'pasandideh', 'pichideh', 'pishrafteh', 'bad_badan',
@@ -37,13 +38,22 @@ adjs = [
     'naz_parvardeh', 'vabasteh', 'varafteh', 'varasteh', 'varparideh',
     'varshekasteh', 'haraasaan', 'bi_namoos', 'khak_barsar', 'oghde_ee',
     'kheng', 'dana', 'khoshhal', 'kheng', 'ghozmit', 'afsoreh_sima',
-    'boland_parvaz', 'delsard', 'kaftar_baaz', 'chabok', 'khafan',
+    'boland_parvaz', 'delsard', 'kaftar_baaz', 'gorbe_baaz', 'chabok', 'khafan',
     'daneshmand', 'data_scientist'
 ]
+""" List of adjectives """
 
-adjs = adjs * 10
-foods = foods * 10
-name, adjective = secrets.choice(foods), secrets.choice(adjs) 
+def gen() -> str:
+    """ Generates a name and returns that as a string """
+    adjs = ADJS * 10
+    foods = FOODS * 10
+    name, adjective = secrets_choice(foods), secrets_choice(adjs)
 
-print(f"{name}-{adjective}")
+    return f"{name}-{adjective}"
 
+def run():
+    """ The main function """
+    print(gen())
+
+if __name__ == '__main__':
+    run()
