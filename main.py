@@ -149,7 +149,6 @@ ADJS = [
     {'en': 'bi_namoos', 'fa': 'بی ناموس'},
     {'en': 'khak_barsar', 'fa': 'خاک برسر'},
     {'en': 'oghde_ee', 'fa': 'عقده‌ای'},
-    {'en': 'kheng', 'fa': 'خنگ'},
     {'en': 'dana', 'fa': 'دانا'},
     {'en': 'khoshhal', 'fa': 'خوشحال'},
     {'en': 'kheng', 'fa': 'خنگ'},
