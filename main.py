@@ -164,7 +164,11 @@ ADJS = [
     {'en': 'sharaab_zadeh', 'fa': 'شراب زده'}, 
     {'en': 'kharaab', 'fa': 'خراب'}, 
     {'en': 'oskol', 'fa': 'اسکل'}, 
-    {'en': 'gij', 'fa': 'گیج'}
+    {'en': 'gij', 'fa': 'گیج'},
+    {'en': 'mehraboon', 'fa': 'مهربون'},
+    {'en': 'forootan', 'fa': 'فروتن'},
+    {'en': 'falak zadeh', 'fa': 'فلک زده'},
+    {'en': 'sirish', 'fa': 'سیریش'}
 ]
 
 
