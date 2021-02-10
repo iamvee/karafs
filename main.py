@@ -3,10 +3,41 @@ import sys
 import time
 from secrets import choice
 
+
 def choice(objs):
     indx = int(time.time() * 1_000_000) % len(objs)
     return objs[indx]
 
+
+def gen(lang='fa') -> str:
+    """ Generates a name and returns that as a string """
+    adjs = ADJS * 10
+    foods = FOODS * 10
+    
+    return f"{name[lang]} {adjective[lang]}"
+
+
+def main():
+    flags = sys.argv[1:]
+
+    if '-n' in flags:
+        ind = flags.index('-n')
+        count = int(flags.pop(ind+1))
+        flags.remove('-n')
+    else:
+        count = 1
+
+    for i in range(count):
+        name, adjective = choice(FOODS), choice(ADJS)
+        flags = ['fa', 'en'] if not flags else flags
+        if 'fa' in flags:
+            lang='fa'
+            print(f"{name[lang]} {adjective[lang]}")
+ 
+        if 'en' in flags:
+            lang='en'
+            print(f"{name[lang]} {adjective[lang]}")
+    
 FOODS =[
     {'en': 'anaar-e', 'fa': 'انار'},
     {'en': 'azgil-e', 'fa': 'ازگیل'},
@@ -167,35 +198,6 @@ ADJS = [
     {'en': 'gij', 'fa': 'گیج'}
 ]
 
-
-def gen(lang='fa') -> str:
-    """ Generates a name and returns that as a string """
-    adjs = ADJS * 10
-    foods = FOODS * 10
-    
-    return f"{name[lang]} {adjective[lang]}"
-
-    
 if __name__ == '__main__':
-
-
-    flags = sys.argv[1:]
-
-    if '-n' in flags:
-        ind = flags.index('-n')
-        count = int(flags.pop(ind+1))
-        flags.remove('-n')
-    else:
-        count = 1
-
-    for i in range(count):
-        name, adjective = choice(FOODS), choice(ADJS)
-        flags = ['fa', 'en'] if not flags else flags
-        if 'fa' in flags:
-            lang='fa'
-            print(f"{name[lang]} {adjective[lang]}")
- 
-        if 'en' in flags:
-            lang='en'
-            print(f"{name[lang]} {adjective[lang]}")
+    main()
         
