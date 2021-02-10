@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
+
+""" Namegen - Generate random names """
+
 import sys
 import time
-from secrets import choice
 
 def choice(objs):
+    """ Select a random item from a list """
     indx = int(time.time() * 1_000_000) % len(objs)
     return objs[indx]
 
-FOODS =[
+FOODS = [
     {'en': 'anaar-e', 'fa': 'انار'},
     {'en': 'azgil-e', 'fa': 'ازگیل'},
     {'en': 'albaloo-ye', 'fa': 'آلبالوی'},
@@ -81,104 +84,98 @@ FOODS =[
 ]
 
 ADJS = [
-    {'en': 'ashofteh', 'fa': 'آشفته'}, 
-    {'en': 'aloodeh', 'fa': 'آلوده'}, 
-    {'en': 'afsordeh', 'fa': 'افسرده'}, 
+    {'en': 'ashofteh', 'fa': 'آشفته'},
+    {'en': 'aloodeh', 'fa': 'آلوده'},
+    {'en': 'afsordeh', 'fa': 'افسرده'},
     {'en': 'motor savar', 'fa': 'موتور سوار'},
-    {'en': 'bargozideh', 'fa': 'برگزیده'}, 
-    {'en': 'pokhteh', 'fa': 'پخته'}, 
-    {'en': 'parvardeh', 'fa': 'پرورده'}, 
-    {'en': 'shargاi', 'fa': 'شرقی'}, 
-    {'en': 'parishan', 'fa': 'پریشان'}, 
-    {'en': 'pichideh', 'fa': 'پیچیده'}, 
-    {'en': 'pishrafteh', 'fa': 'پیشرفته'}, 
-    {'en': 'gharb zadeh', 'fa': 'غرب زده'}, 
-    {'en': 'tafteh', 'fa': 'تافته'}, 
-    {'en': 'taftideh', 'fa': 'تفتیده'}, 
-    {'en': 'chasbideh', 'fa': 'چسبیده'}, 
-    {'en': 'khamideh', 'fa': 'خمیده'}, 
-    {'en': 'kharaaman', 'fa': 'خرامان'}, 
-    {'en': 'chegher', 'fa': 'چغر'}, 
-    {'en': 'khalideh', 'fa': 'خلیده'}, 
-    {'en': 'khaste', 'fa': 'خسته'}, 
-    {'en': 'dars khaandeh', 'fa': 'درس خوانده'}, 
-    {'en': 'deldadeh', 'fa': 'دلداده'}, 
-    {'en': 'delpazir', 'fa': 'دلپذیر'}, 
-    {'en': 'dom borideh', 'fa': 'دم بریده'}, 
-    {'en': 'rahideh', 'fa': 'رهیده'}, 
-    {'en': 'ablah', 'fa': 'ابله'}, 
-    {'en': 'rang parideh', 'fa': 'رنگ پریده'}, 
-    {'en': 'resideh', 'fa': 'رسیده'}, 
-    {'en': 'zereh push', 'fa': 'زره پوش'}, 
-    {'en': 'zabanzad', 'fa': 'زبانزد'}, 
-    {'en': 'zir afkan', 'fa': 'زیر افکن'}, 
-    {'en': 'zhoolideh', 'fa': 'ژولیده'}, 
-    {'en': 'salkhordeh', 'fa': 'سالخورده'}, 
-    {'en': 'sar afkandeh', 'fa': 'سرافکنده'}, 
-    {'en': 'sar sepordeh', 'fa': 'سر سپرده'}, 
-    {'en': 'sar shekasteh', 'fa': 'سر شکسته'}, 
-    {'en': 'sar gashteh', 'fa': 'سر گشته'}, 
-    {'en': 'sookhteh', 'fa': 'سوخته'}, 
-    {'en': 'sharab zadeh', 'fa': 'شراب زده'}, 
-    {'en': 'shoorideh', 'fa': 'شوریده'}, 
-    {'en': 'shifteh', 'fa': 'شیفته'}, 
-    {'en': 'farrokhzad', 'fa': 'فرخزاد'}, 
-    {'en': 'farsoodeh', 'fa': 'فرسوده'}, 
-    {'en': 'farifteh', 'fa': 'فریفته'}, 
-    {'en': 'foroo_heshteh', 'fa': 'فروهشته'}, 
-    {'en': 'kar azmoodeh', 'fa': 'کار آزموده'}, 
-    {'en': 'kar amad', 'fa': 'کارآمد'}, 
-    {'en': 'gosasteh', 'fa': 'گسسته'}, 
-    {'en': 'gozideh', 'fa': 'گزیده'}, 
-    {'en': 'gomashteh', 'fa': 'گماشته'}, 
-    {'en': 'legam gosikhteh', 'fa': 'لگام گسیخته'}, 
-    {'en': 'miyaneh ro', 'fa': 'میانه رو'}, 
-    {'en': 'modabber', 'fa': 'مدبر'}, 
-    {'en': 'naadaan', 'fa': 'نادان'}, 
-    {'en': 'sharlatan', 'fa': 'شارلاتان'}, 
-    {'en': 'naz parvardeh', 'fa': 'ناز پرورده'}, 
-    {'en': 'vabasteh', 'fa': 'وابسته'}, 
-    {'en': 'varafteh', 'fa': 'وارفته'}, 
-    {'en': 'varasteh', 'fa': 'وارسته'}, 
-    {'en': 'varparideh', 'fa': 'ورپریده'}, 
-    {'en': 'varshekasteh', 'fa': 'ورشکسته'}, 
-    {'en': 'haraasaan', 'fa': 'هراسان'}, 
-    {'en': 'bi_namoos', 'fa': 'بی ناموس'}, 
-    {'en': 'khak_barsar', 'fa': 'خاک برسر'}, 
-    {'en': 'oghde_ee', 'fa': 'عقده‌ای'}, 
-    {'en': 'kheng', 'fa': 'خنگ'}, 
-    {'en': 'dana', 'fa': 'دانا'}, 
-    {'en': 'khoshhal', 'fa': 'خوشحال'}, 
-    {'en': 'kheng', 'fa': 'خنگ'}, 
-    {'en': 'ghozmit', 'fa': 'قزمیت'}, 
-    {'en': 'afsordeh_sima', 'fa': 'افسرده سیما'}, 
-    {'en': 'boland parvaz', 'fa': 'بلند پرواز'}, 
-    {'en': 'delsard', 'fa': 'دلسرد'}, 
-    {'en': 'kaftar baaz', 'fa': 'کفترباز'}, 
-    {'en': 'chabok', 'fa': 'چابک'}, 
-    {'en': 'khafan', 'fa': 'خفن'}, 
-    {'en': 'daneshmand', 'fa': 'دانشمند'}, 
-    {'en': 'data scientist', 'fa': 'دیتا ساینتیست'}, 
-    {'en': 'mofles', 'fa': 'مفلس'}, 
-    {'en': 'dordi_kash', 'fa': 'دردی کش'}, 
-    {'en': 'sharaab_zadeh', 'fa': 'شراب زده'}, 
-    {'en': 'kharaab', 'fa': 'خراب'}, 
-    {'en': 'oskol', 'fa': 'اسکل'}, 
+    {'en': 'bargozideh', 'fa': 'برگزیده'},
+    {'en': 'pokhteh', 'fa': 'پخته'},
+    {'en': 'parvardeh', 'fa': 'پرورده'},
+    {'en': 'shargاi', 'fa': 'شرقی'},
+    {'en': 'parishan', 'fa': 'پریشان'},
+    {'en': 'pichideh', 'fa': 'پیچیده'},
+    {'en': 'pishrafteh', 'fa': 'پیشرفته'},
+    {'en': 'gharb zadeh', 'fa': 'غرب زده'},
+    {'en': 'tafteh', 'fa': 'تافته'},
+    {'en': 'taftideh', 'fa': 'تفتیده'},
+    {'en': 'chasbideh', 'fa': 'چسبیده'},
+    {'en': 'khamideh', 'fa': 'خمیده'},
+    {'en': 'kharaaman', 'fa': 'خرامان'},
+    {'en': 'chegher', 'fa': 'چغر'},
+    {'en': 'khalideh', 'fa': 'خلیده'},
+    {'en': 'khaste', 'fa': 'خسته'},
+    {'en': 'dars khaandeh', 'fa': 'درس خوانده'},
+    {'en': 'deldadeh', 'fa': 'دلداده'},
+    {'en': 'delpazir', 'fa': 'دلپذیر'},
+    {'en': 'dom borideh', 'fa': 'دم بریده'},
+    {'en': 'rahideh', 'fa': 'رهیده'},
+    {'en': 'ablah', 'fa': 'ابله'},
+    {'en': 'rang parideh', 'fa': 'رنگ پریده'},
+    {'en': 'resideh', 'fa': 'رسیده'},
+    {'en': 'zereh push', 'fa': 'زره پوش'},
+    {'en': 'zabanzad', 'fa': 'زبانزد'},
+    {'en': 'zir afkan', 'fa': 'زیر افکن'},
+    {'en': 'zhoolideh', 'fa': 'ژولیده'},
+    {'en': 'salkhordeh', 'fa': 'سالخورده'},
+    {'en': 'sar afkandeh', 'fa': 'سرافکنده'},
+    {'en': 'sar sepordeh', 'fa': 'سر سپرده'},
+    {'en': 'sar shekasteh', 'fa': 'سر شکسته'},
+    {'en': 'sar gashteh', 'fa': 'سر گشته'},
+    {'en': 'sookhteh', 'fa': 'سوخته'},
+    {'en': 'sharab zadeh', 'fa': 'شراب زده'},
+    {'en': 'shoorideh', 'fa': 'شوریده'},
+    {'en': 'shifteh', 'fa': 'شیفته'},
+    {'en': 'farrokhzad', 'fa': 'فرخزاد'},
+    {'en': 'farsoodeh', 'fa': 'فرسوده'},
+    {'en': 'farifteh', 'fa': 'فریفته'},
+    {'en': 'foroo_heshteh', 'fa': 'فروهشته'},
+    {'en': 'kar azmoodeh', 'fa': 'کار آزموده'},
+    {'en': 'kar amad', 'fa': 'کارآمد'},
+    {'en': 'gosasteh', 'fa': 'گسسته'},
+    {'en': 'gozideh', 'fa': 'گزیده'},
+    {'en': 'gomashteh', 'fa': 'گماشته'},
+    {'en': 'legam gosikhteh', 'fa': 'لگام گسیخته'},
+    {'en': 'miyaneh ro', 'fa': 'میانه رو'},
+    {'en': 'modabber', 'fa': 'مدبر'},
+    {'en': 'naadaan', 'fa': 'نادان'},
+    {'en': 'sharlatan', 'fa': 'شارلاتان'},
+    {'en': 'naz parvardeh', 'fa': 'ناز پرورده'},
+    {'en': 'vabasteh', 'fa': 'وابسته'},
+    {'en': 'varafteh', 'fa': 'وارفته'},
+    {'en': 'varasteh', 'fa': 'وارسته'},
+    {'en': 'varparideh', 'fa': 'ورپریده'},
+    {'en': 'varshekasteh', 'fa': 'ورشکسته'},
+    {'en': 'haraasaan', 'fa': 'هراسان'},
+    {'en': 'bi_namoos', 'fa': 'بی ناموس'},
+    {'en': 'khak_barsar', 'fa': 'خاک برسر'},
+    {'en': 'oghde_ee', 'fa': 'عقده‌ای'},
+    {'en': 'kheng', 'fa': 'خنگ'},
+    {'en': 'dana', 'fa': 'دانا'},
+    {'en': 'khoshhal', 'fa': 'خوشحال'},
+    {'en': 'kheng', 'fa': 'خنگ'},
+    {'en': 'ghozmit', 'fa': 'قزمیت'},
+    {'en': 'afsordeh_sima', 'fa': 'افسرده سیما'},
+    {'en': 'boland parvaz', 'fa': 'بلند پرواز'},
+    {'en': 'delsard', 'fa': 'دلسرد'},
+    {'en': 'kaftar baaz', 'fa': 'کفترباز'},
+    {'en': 'chabok', 'fa': 'چابک'},
+    {'en': 'khafan', 'fa': 'خفن'},
+    {'en': 'daneshmand', 'fa': 'دانشمند'},
+    {'en': 'data scientist', 'fa': 'دیتا ساینتیست'},
+    {'en': 'mofles', 'fa': 'مفلس'},
+    {'en': 'dordi_kash', 'fa': 'دردی کش'},
+    {'en': 'sharaab_zadeh', 'fa': 'شراب زده'},
+    {'en': 'kharaab', 'fa': 'خراب'},
+    {'en': 'oskol', 'fa': 'اسکل'},
     {'en': 'gij', 'fa': 'گیج'}
 ]
 
-
 def gen(lang='fa') -> str:
     """ Generates a name and returns that as a string """
-    adjs = ADJS * 10
-    foods = FOODS * 10
-    
-    return f"{name[lang]} {adjective[lang]}"
+    rand_name, rand_adjective = choice(FOODS), choice(ADJS)
+    return f"{rand_name[lang]} {rand_adjective[lang]}"
 
-    
 if __name__ == '__main__':
-
-
     flags = sys.argv[1:]
 
     if '-n' in flags:
@@ -192,10 +189,7 @@ if __name__ == '__main__':
         name, adjective = choice(FOODS), choice(ADJS)
         flags = ['fa', 'en'] if not flags else flags
         if 'fa' in flags:
-            lang='fa'
-            print(f"{name[lang]} {adjective[lang]}")
- 
+            print(gen('fa'))
+
         if 'en' in flags:
-            lang='en'
-            print(f"{name[lang]} {adjective[lang]}")
-        
+            print(gen('en'))
