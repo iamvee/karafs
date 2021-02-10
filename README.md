@@ -5,7 +5,7 @@
 
 ```shell
 ➜ namegen -n 10
-شلیل پریشانتوت فرنگی بی ناموس
+توت فرنگی بی ناموس
 toot farangi-ye bi_namoos
 غورهٔ خسته
 ghoore-ye khaste
