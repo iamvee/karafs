@@ -171,7 +171,7 @@ ADJS = [
 
 def gen(lang='fa') -> str:
     """ Generates a name and returns that as a string
-    
+
     Also you can pass an argument as language (default is `fa`)
     """
     rand_name, rand_adjective = choice(FOODS), choice(ADJS)
