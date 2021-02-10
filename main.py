@@ -169,13 +169,10 @@ ADJS = [
     {'en': 'gij', 'fa': 'گیج'}
 ]
 
-def gen(lang='fa') -> str:
-    """ Generates a name and returns that as a string
-
-    Also you can pass an argument as language (default is `fa`)
-    """
+def gen() -> str:
+    """ Generates a name and returns name and adjective as a tuple"""
     rand_name, rand_adjective = choice(FOODS), choice(ADJS)
-    return f"{rand_name[lang]} {rand_adjective[lang]}"
+    return rand_name, rand_adjective
 
 if __name__ == '__main__':
     flags = sys.argv[1:]
@@ -190,8 +187,9 @@ if __name__ == '__main__':
     for i in range(count):
         name, adjective = choice(FOODS), choice(ADJS)
         flags = ['fa', 'en'] if not flags else flags
+        generated_name = gen()
         if 'fa' in flags:
-            print(gen('fa'))
+            print(generated_name[0]['fa'] + ' ' + generated_name[1]['fa'])
 
         if 'en' in flags:
-            print(gen('en'))
+            print(generated_name[0]['en'] + ' ' + generated_name[1]['en'])
