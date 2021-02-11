@@ -12,7 +12,7 @@ setuptools.setup(
     description="random funny persian name generator",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/iamvee/namegen",
+    url="https://github.com/iamvee/karafs",
     packages=setuptools.find_packages(),
     scripts=['bin/karafs'],
     classifiers=[
