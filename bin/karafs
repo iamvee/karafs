@@ -167,7 +167,23 @@ ADJS = [
     {'en': 'sharaab_zadeh', 'fa': 'شراب زده'},
     {'en': 'kharaab', 'fa': 'خراب'},
     {'en': 'oskol', 'fa': 'اسکل'},
-    {'en': 'gij', 'fa': 'گیج'}
+    {'en': 'gij', 'fa': 'گیج'},
+    {'en': 'bi-farhang', 'fa': 'بی فرهنگ'},
+    {'en': 'forootan', 'fa': 'فروتن'},
+    {'en': 'sirish', 'fa': 'سیریش'},
+    {'en': 'mehrabaan', 'fa': 'مهربان'},
+    {'en': 'khar-khoon', 'fa': 'خر خون'},
+    {'en': 'ravaanparish', 'fa': 'روانپریش'},
+    {'en': 'bi-hejaab', 'fa': 'بی حجاب'},
+    {'en': 'feminist', 'fa': 'فمینیست'},
+    {'en': 'momen', 'fa': 'مومن'},
+    {'en': 'sakht-koosh', 'fa': 'سخت کوش'},
+    {'en': 'divaneh', 'fa': 'دیوانه'},
+    {'en': 'kalleh-pook', 'fa': 'کله پوک'},
+    {'en': 'bi-taab', 'fa': 'بی تاب'},
+    {'en': 'tahamtan', 'fa': 'تهمتن'},
+    {'en': 'shab-zendeh-daar', 'fa': 'شب زنده دار'},
+    {'en': 'chaaploos', 'fa': 'چاپلوس'}
 ]
 
 
