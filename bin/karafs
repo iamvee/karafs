@@ -3,6 +3,7 @@ import sys
 import time
 
 def choice(objs):
+    """ Selects a random item from a list """
     indx = int(time.time() * 1_000_000) % len(objs)
     return objs[indx]
 
