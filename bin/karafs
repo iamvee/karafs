@@ -82,6 +82,7 @@ FOODS = [
     {'en': 'faloode-ye', 'fa': 'فالودهٔ'},
     {'en': 'shir berenj-e', 'fa': 'شیر برنج'}
 ]
+""" List of names """
 
 ADJS = [
     {'en': 'ashofteh', 'fa': 'آشفته'},
@@ -169,6 +170,10 @@ ADJS = [
     {'en': 'oskol', 'fa': 'اسکل'},
     {'en': 'gij', 'fa': 'گیج'}
 ]
+""" List of adjectives """
+
+LANGS = ['en', 'fa']
+""" The available languages """
 
 def gen() -> str:
     """ Generates a name and adjective and returns them as tuple """
@@ -185,14 +190,11 @@ def main(flags):
 
     for i in range(count):
         name, adjective = gen()
-        flags = ['fa', 'en'] if not flags else flags
-        if 'fa' in flags:
-            lang='fa'
-            print(f"{name[lang]} {adjective[lang]}")
+        flags = LANGS if not flags else flags
 
-        if 'en' in flags:
-            lang='en'
-            print(f"{name[lang]} {adjective[lang]}")
+        for lang in LANGS:
+            if lang in flags:
+                print(f"{name[lang]} {adjective[lang]}")
 
 if __name__ == '__main__':
     main(sys.argv[1:])
