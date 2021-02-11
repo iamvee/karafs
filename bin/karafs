@@ -97,7 +97,7 @@ FOODS =[
     {'en': 'jaghoor baghoor-e', 'fa': 'جغوربغور'},
     {'en': 'omlet-e', 'fa': 'املت'},
     {'en': 'kachi-ye', 'fa': 'کاچی'},
-    {'en': 'nimroo-ye', 'fa': 'نیمروی'},
+    {'en': 'nimroo-ye', 'fa': 'نیمروی'}
 ]
 
 ADJS = [
