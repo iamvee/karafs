@@ -6,6 +6,8 @@ import os
 import subprocess
 
 KARAFS_BIN = 'bin/karafs'
+if os.name == 'nt':
+    KARAFS_BIN = KARAFS_BIN.replace('/', '\\')
 
 def run_command(cmd='') -> str:
     """ Runs a command on karafs and returns the output as string """
