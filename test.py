@@ -5,7 +5,6 @@
 import os
 import subprocess
 import platform
-import importlib.util
 
 KARAFS_BIN = os.path.abspath('bin/karafs')
 
