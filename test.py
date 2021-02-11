@@ -4,13 +4,12 @@
 
 import os
 import subprocess
-import platform
 
 KARAFS_BIN = os.path.abspath('bin/karafs')
 
 def run_command(cmd='') -> str:
     """ Runs a command on karafs and returns the output as string """
-    if platform.system().startswith('Winodws'):
+    if os.name == 'nt':
         python_exe = 'python'
     else:
         python_exe = 'python3'
