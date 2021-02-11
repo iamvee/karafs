@@ -170,14 +170,12 @@ ADJS = [
     {'en': 'gij', 'fa': 'گیج'}
 ]
 
-
-def gen(lang='fa') -> str:
-    """ Generates a name and returns that as a string """
-    adjs = ADJS * 10
-    foods = FOODS * 10
-    return f"{name[lang]} {adjective[lang]}"
+def gen() -> str:
+    """ Generates a name and adjective and returns them as tuple """
+    return choice(FOODS), choice(ADJS)
 
 def main(flags):
+    """ The main cli entry point """
     if '-n' in flags:
         ind = flags.index('-n')
         count = int(flags.pop(ind+1))
@@ -186,7 +184,7 @@ def main(flags):
         count = 1
 
     for i in range(count):
-        name, adjective = choice(FOODS), choice(ADJS)
+        name, adjective = gen()
         flags = ['fa', 'en'] if not flags else flags
         if 'fa' in flags:
             lang='fa'
