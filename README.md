@@ -1,10 +1,18 @@
 # karafs کرفس
 تولید اسم های رندوم فینگیلیش
 
+## installation 
+
+```shell
+pip install karafs
+```
+
+## usage
+
 ## دو زبانه
 
 ```shell
-➜ namegen -n 10
+➜ karafs -n 10
 شلیل پریشانتوت فرنگی بی ناموس
 toot farangi-ye bi_namoos
 غورهٔ خسته
@@ -30,7 +38,7 @@ ton maahi-ye tafteh
 ## فقط انگلیسی
 
 ```shell
-➜ namegen -n 10 en
+➜ karafs -n 10 en
 shaftaaloo-ye boland parvaz
 baalang-e khoshhal
 porteghal-e foroo_heshteh
@@ -46,7 +54,7 @@ ananas-e khafan
 ## فقط فارسی
 
 ```shell
-➜ namegen -n 10 fa
+➜ karafs -n 10 fa
 
 کیوی شارلاتان
 لوبیا چیتی چابک
