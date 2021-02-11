@@ -1,0 +1,29 @@
+name: tests
+
+on: ['push', 'pull_request']
+
+jobs:
+  run_tests:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # TODO : fix windows problem
+        #os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
+        python: [3.6, 3.7, 3.8, 3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python }}
+    - name: Running Tests
+      run: |
+        python test.py
+
+    name: ${{ matrix.os }} Python ${{ matrix.python }}
+
