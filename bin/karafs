@@ -7,8 +7,8 @@ import time
 
 def choice(objs):
     """ Selects a random item from a list """
-    indx = int(time.time() * 1_000_000) % len(objs)
-    return objs[indx]
+    index = int(time.time() * 1_000_000) % len(objs)
+    return objs[index]
 
 FOODS = [
     {'en': 'anaar-e', 'fa': 'انار'},
