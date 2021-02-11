@@ -43,6 +43,12 @@ def test():
     output = run_command('other')
     assert len(output.splitlines()) == 0
 
+    output = run_command('-n 10')
+    assert ' ' in output
+
+    output = run_command('-n 10 --no-space')
+    assert ' ' not in output
+
 if __name__ == '__main__':
     test()
     print('Tests passed successfully.')

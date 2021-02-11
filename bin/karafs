@@ -203,13 +203,22 @@ def main(flags):
     else:
         count = 1
 
+    no_space = False
+    if '--no-space' in flags:
+        flags.remove('--no-space')
+        no_space = True
+
     for i in range(count):
         name, adjective = gen()
         flags = LANGS if not flags else flags
 
         for lang in LANGS:
             if lang in flags:
-                print(f"{name[lang]} {adjective[lang]}")
+                output = f"{name[lang]} {adjective[lang]}"
+                # if `--no-space` flag in inserted, remove whitespaces
+                if no_space:
+                    output = output.replace(' ', '-')
+                print(output)
 
 if __name__ == '__main__':
     main(sys.argv[1:])
