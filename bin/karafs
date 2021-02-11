@@ -175,12 +175,8 @@ def gen(lang='fa') -> str:
     
     return f"{name[lang]} {adjective[lang]}"
 
-    
-if __name__ == '__main__':
 
-
-    flags = sys.argv[1:]
-
+def main(flags):
     if '-n' in flags:
         ind = flags.index('-n')
         count = int(flags.pop(ind+1))
@@ -198,4 +194,9 @@ if __name__ == '__main__':
         if 'en' in flags:
             lang='en'
             print(f"{name[lang]} {adjective[lang]}")
+
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
+    
         
