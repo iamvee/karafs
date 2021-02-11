@@ -77,7 +77,27 @@ FOODS =[
     {'en': 'tah chin-e', 'fa': 'ته چین'},
     {'en': 'ton maahi-ye', 'fa': 'تن ماهی'},
     {'en': 'faloode-ye', 'fa': 'فالودهٔ'},
-    {'en': 'shir berenj-e', 'fa': 'شیر برنج'}
+    {'en': 'shir berenj-e', 'fa': 'شیر برنج'},
+    {'en': 'ghorme sabzi-ye', 'fa': 'قرمه سبزی'},
+    {'en': 'sandwich-e', 'fa': 'ساندویچ'},
+    {'en': 'kotlet-e', 'fa': 'کتلت'},
+    {'en': 'kookoo-ye', 'fa': 'کوکوی'},
+    {'en': 'yatimche-ye', 'fa': 'یتیمچه ی'},
+    {'en': 'salad-e', 'fa': 'سالاد'},
+    {'en': 'ash-e', 'fa': 'آش'},
+    {'en': 'olovie-ye', 'fa': 'الویه'},
+    {'en': 'makaroni-ye', 'fa': 'ماکارونی'},
+    {'en': 'abgoosht-e', 'fa': 'آبگوشت'},
+    {'en': 'eshkene-ye', 'fa': 'اشکنه ی'},
+    {'en': 'kalle joosh-e', 'fa': 'کله جوش'},
+    {'en': 'estamboli-ye', 'fa': 'استامبولی'},
+    {'en': 'koofte tabrizi-ye', 'fa': 'کوفته تبریزی'},
+    {'en': 'kashk o bademjoon-e', 'fa': 'کشک و بادمجون'},
+    {'en': 'mirza ghasemi-ye', 'fa': 'میرزا قاسمی'},
+    {'en': 'jaghoor baghoor-e', 'fa': 'جغوربغور'},
+    {'en': 'omlet-e', 'fa': 'املت'},
+    {'en': 'kachi-ye', 'fa': 'کاچی'},
+    {'en': 'nimroo-ye', 'fa': 'نیمروی'},
 ]
 
 ADJS = [
