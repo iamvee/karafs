@@ -194,6 +194,19 @@ def gen() -> str:
     """ Generates a name and adjective and returns them as tuple """
     return choice(FOODS), choice(ADJS)
 
+def gen_str(lang='en') -> str:
+    """ Generates a random name and returns that as a string
+
+    Args:
+        lang(str): you can specify the language (default is `en`)
+    """
+    food, adjective = gen()
+    return f"{food[lang]} {adjective[lang]}"
+
+def gen_str_without_space(lang='en'):
+    """ Generates a random name without white space (gets language) """
+    return gen_str(lang).replace(' ', '-')
+
 def main(flags):
     """ The main cli entry point """
     if '-n' in flags:
