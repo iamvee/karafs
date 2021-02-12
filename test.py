@@ -5,7 +5,7 @@
 import os
 import subprocess
 
-KARAFS_BIN = 'bin/karafs'
+KARAFS_BIN = 'karafs/karafs.py'
 if os.name == 'nt':
     KARAFS_BIN = KARAFS_BIN.replace('/', '\\')
 
