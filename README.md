@@ -83,3 +83,16 @@ ananas-e khafan
 ➜ karafs --no-space -n 10
 ```
 
+## use as library
+شما میتونید کرفس رو به عنوان یک کتابخانه توی برنامه هاتون استفاده کنید.
+
+```python
+import karafs
+
+print(karafs.gen_str()) # generate a random name (finglish)
+print(karafs.gen_str('fa')) # generate a random name (persian)
+
+print(karafs.gen_str_without_space()) # generate a random name without whitespace (finglish)
+print(karafs.gen_str_without_space('fa')) # generate a random name without whitespace (persian)
+```
+

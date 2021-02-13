@@ -4,8 +4,9 @@
 
 import os
 import subprocess
+from karafs.karafs import gen_str, gen_str_without_space
 
-KARAFS_BIN = 'bin/karafs'
+KARAFS_BIN = 'karafs/karafs.py'
 if os.name == 'nt':
     KARAFS_BIN = KARAFS_BIN.replace('/', '\\')
 
@@ -48,6 +49,15 @@ def test():
 
     output = run_command('-n 10 --no-space')
     assert ' ' not in output
+
+    assert type(gen_str()) == str
+    assert type(gen_str('fa')) == str
+
+    assert type(gen_str_without_space()) == str
+    assert type(gen_str_without_space('fa')) == str
+
+    assert ' ' in gen_str()
+    assert ' ' not in gen_str_without_space()
 
 if __name__ == '__main__':
     test()

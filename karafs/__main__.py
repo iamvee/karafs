@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+""" Run the karafs """
+
 import sys
 from karafs import main
 
