@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name="karafs", 
-    version="0.0.3",
+    version="0.1",
     author="Vahid Naeini",
     install_requires=['docutils>=0.3'],
     author_email="naeini.v@gmail.com",
