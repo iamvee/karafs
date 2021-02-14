@@ -30,12 +30,16 @@ def test():
     assert len(run_command('-n 10').splitlines()) == 20
 
     assert len(run_command('en').splitlines()) == 1
+    assert len(run_command('-en').splitlines()) == 1
 
     assert len(run_command('fa').splitlines()) == 1
+    assert len(run_command('-fa').splitlines()) == 1
 
     assert len(run_command('fa -n 5').splitlines()) == 5
+    assert len(run_command('-fa -n 5').splitlines()) == 5
 
     assert len(run_command('en -n 5').splitlines()) == 5
+    assert len(run_command('-en -n 5').splitlines()) == 5
 
     assert len(run_command('other').splitlines()) == 0
 

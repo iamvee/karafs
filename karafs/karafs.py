@@ -231,12 +231,18 @@ def main(flags):
         flags.remove('--no-space')
         no_space = True
 
+    # handle language flags
+    for lang in LANGS:
+        if lang in flags:
+            ind = flags.index(lang)
+            flags[ind] = '-' + lang
+
     for i in range(count):
         name, adjective = gen()
-        flags = LANGS if not flags else flags
+        flags = ['-' + lang for lang in LANGS] if not flags else flags
 
         for lang in LANGS:
-            if lang in flags:
+            if '-' + lang in flags:
                 output = f"{name[lang]} {adjective[lang]}"
                 # if `--no-space` flag in inserted, remove whitespaces
                 if no_space:
