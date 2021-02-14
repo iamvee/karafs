@@ -17,7 +17,9 @@ def run_command(cmd='') -> str:
     else:
         python_exe = 'python3'
     return subprocess.check_output(
-        python_exe + ' ' + KARAFS_BIN + ' ' + cmd, shell=True
+        python_exe + ' ' + KARAFS_BIN + ' ' + cmd,
+        shell=True,
+        stderr=subprocess.PIPE,
     ).decode().strip()
 
 def test():
@@ -58,6 +60,12 @@ def test():
 
     assert ' ' in gen_str()
     assert ' ' not in gen_str_without_space()
+
+    output = run_command('-n')
+    assert len(output.splitlines()) == 2
+
+    output = run_command('-n abc')
+    assert len(output.splitlines()) == 2
 
 if __name__ == '__main__':
     test()

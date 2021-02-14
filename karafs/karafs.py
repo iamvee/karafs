@@ -211,7 +211,17 @@ def main(flags):
     """ The main cli entry point """
     if '-n' in flags:
         ind = flags.index('-n')
-        count = int(flags.pop(ind+1))
+        try:
+            count = flags.pop(ind+1)
+        except IndexError:
+            # no parameter passed to -n
+            print('warning: option -n requires a parameter', file=sys.stderr)
+            count = 1
+        try:
+            count = int(count)
+        except ValueError:
+            print('warning: option -n requires a number parameter', file=sys.stderr)
+            count = 1
         flags.remove('-n')
     else:
         count = 1
