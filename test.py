@@ -2,6 +2,7 @@
 
 """ Running the tests for karafs """
 
+import sys
 import os
 import subprocess
 from karafs.karafs import gen_str, gen_str_without_space
@@ -12,10 +13,7 @@ if os.name == 'nt':
 
 def run_command(cmd='') -> str:
     """ Runs a command on karafs and returns the output as string """
-    if os.name == 'nt':
-        python_exe = 'python'
-    else:
-        python_exe = 'python3'
+    python_exe = repr(sys.executable)
     return subprocess.check_output(
         python_exe + ' ' + KARAFS_BIN + ' ' + cmd,
         shell=True,
