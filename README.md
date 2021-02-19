@@ -1,10 +1,10 @@
 # karafs کرفس
 تولید اسم های رندوم فینگیلیش
 
-## installation 
+## installation
 
 ```shell
-pip install karafs
+➜ pip install karafs
 ```
 
 ## usage
@@ -38,7 +38,7 @@ ton maahi-ye tafteh
 ## فقط انگلیسی
 
 ```shell
-➜ karafs -n 10 en
+➜ karafs -n 10 -en
 shaftaaloo-ye boland parvaz
 baalang-e khoshhal
 porteghal-e foroo_heshteh
@@ -54,7 +54,7 @@ ananas-e khafan
 ## فقط فارسی
 
 ```shell
-➜ karafs -n 10 fa
+➜ karafs -n 10 -fa
 
 کیوی شارلاتان
 لوبیا چیتی چابک
@@ -95,4 +95,3 @@ print(karafs.gen_str('fa')) # generate a random name (persian)
 print(karafs.gen_str_without_space()) # generate a random name without whitespace (finglish)
 print(karafs.gen_str_without_space('fa')) # generate a random name without whitespace (persian)
 ```
-

@@ -2,6 +2,7 @@
 
 """ Running the tests for karafs """
 
+import sys
 import os
 import subprocess
 from karafs.karafs import gen_str, gen_str_without_space
@@ -12,43 +13,37 @@ if os.name == 'nt':
 
 def run_command(cmd='') -> str:
     """ Runs a command on karafs and returns the output as string """
-    if os.name == 'nt':
-        python_exe = 'python'
-    else:
-        python_exe = 'python3'
+    python_exe = repr(sys.executable)
     return subprocess.check_output(
-        python_exe + ' ' + KARAFS_BIN + ' ' + cmd, shell=True
+        python_exe + ' ' + KARAFS_BIN + ' ' + cmd,
+        shell=True,
+        stderr=subprocess.PIPE,
     ).decode().strip()
 
 def test():
     """ Test the program """
     # run the command
-    output = run_command()
-    assert len(output.splitlines()) == 2
+    assert len(run_command().splitlines()) == 2
 
-    output = run_command('-n 10')
-    assert len(output.splitlines()) == 20
+    assert len(run_command('-n 10').splitlines()) == 20
 
-    output = run_command('en')
-    assert len(output.splitlines()) == 1
+    assert len(run_command('en').splitlines()) == 1
+    assert len(run_command('-en').splitlines()) == 1
 
-    output = run_command('fa')
-    assert len(output.splitlines()) == 1
+    assert len(run_command('fa').splitlines()) == 1
+    assert len(run_command('-fa').splitlines()) == 1
 
-    output = run_command('fa -n 5')
-    assert len(output.splitlines()) == 5
+    assert len(run_command('fa -n 5').splitlines()) == 5
+    assert len(run_command('-fa -n 5').splitlines()) == 5
 
-    output = run_command('en -n 5')
-    assert len(output.splitlines()) == 5
+    assert len(run_command('en -n 5').splitlines()) == 5
+    assert len(run_command('-en -n 5').splitlines()) == 5
 
-    output = run_command('other')
-    assert len(output.splitlines()) == 0
+    assert len(run_command('other').splitlines()) == 0
 
-    output = run_command('-n 10')
-    assert ' ' in output
+    assert ' ' in run_command('-n 10')
 
-    output = run_command('-n 10 --no-space')
-    assert ' ' not in output
+    assert ' ' not in run_command('-n 10 --no-space')
 
     assert type(gen_str()) == str
     assert type(gen_str('fa')) == str
@@ -58,6 +53,10 @@ def test():
 
     assert ' ' in gen_str()
     assert ' ' not in gen_str_without_space()
+
+    assert len(run_command('-n').splitlines()) == 2
+
+    assert len(run_command('-n abc').splitlines()) == 2
 
 if __name__ == '__main__':
     test()
