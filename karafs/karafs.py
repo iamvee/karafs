@@ -5,10 +5,12 @@
 import sys
 import time
 
+
 def choice(objs):
     """ Selects a random item from a list """
     index = int(time.time() * 1_000_000) % len(objs)
     return objs[index]
+
 
 FOODS = [
     {'en': 'anaar-e', 'fa': 'انار'},
@@ -80,7 +82,13 @@ FOODS = [
     {'en': 'tah chin-e', 'fa': 'ته چین'},
     {'en': 'ton maahi-ye', 'fa': 'تن ماهی'},
     {'en': 'faloode-ye', 'fa': 'فالودهٔ'},
-    {'en': 'shir berenj-e', 'fa': 'شیر برنج'}
+    {'en': 'shir berenj-e', 'fa': 'شیر برنج'},
+    {'en': 'shir nargil-e', 'fa': 'شیر نارگیل'},
+    {'en': 'shir moz-e', 'fa': 'شیر موز'},
+    {'en': 'shir cacao-e', 'fa': 'شیر کاکائو'},
+    {'en': 'shir toot-farangi-ye', 'fa': 'شیر توت فرنگی'},
+    {'en': 'ab havij-e', 'fa': 'آب هویج'},
+    {'en': 'sandis-e', 'fa': 'ساندیس'}
 ]
 
 ADJS = [
@@ -183,16 +191,27 @@ ADJS = [
     {'en': 'bi-taab', 'fa': 'بی تاب'},
     {'en': 'tahamtan', 'fa': 'تهمتن'},
     {'en': 'shab-zendeh-daar', 'fa': 'شب زنده دار'},
-    {'en': 'chaaploos', 'fa': 'چاپلوس'}
+    {'en': 'chaaploos', 'fa': 'چاپلوس'},
+    {'en': 'gorosne', 'fa': 'گرسنه'},
+    {'en': 'shad', 'fa': 'شاد'},
+    {'en': 'sarkhosh', 'fa': 'سرخوش'},
+    {'en': 'bad-bakht', 'fa': 'بدبخت'},
+    {'en': 'javan-mard', 'fa': 'جوانمرد'},
+    {'en': 'na-javan-mard', 'fa': 'نا جوانمرد'},
+    {'en': 'bad-kholgh', 'fa': 'بد خلق'},
+    {'en': 'setam-kesh', 'fa': 'ستمکش'},
+    {'en': 'setam-gar', 'fa': 'ستمگر'},
+    {'en': 'na-shenas', 'fa': 'ناشناس'}
 ]
 
 
 LANGS = ['en', 'fa']
 
 
-def gen() -> str:
+def gen():
     """ Generates a name and adjective and returns them as tuple """
     return choice(FOODS), choice(ADJS)
+
 
 def gen_str(lang='en') -> str:
     """ Generates a random name and returns that as a string
@@ -203,9 +222,11 @@ def gen_str(lang='en') -> str:
     food, adjective = gen()
     return f"{food[lang]} {adjective[lang]}"
 
+
 def gen_str_without_space(lang='en'):
     """ Generates a random name without white space (gets language) """
     return gen_str(lang).replace(' ', '-')
+
 
 def main(flags):
     """ The main cli entry point """
@@ -248,6 +269,7 @@ def main(flags):
                 if no_space:
                     output = output.replace(' ', '-')
                 print(output)
+
 
 if __name__ == '__main__':
     main(sys.argv[1:])
